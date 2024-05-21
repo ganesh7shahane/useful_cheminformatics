@@ -8,10 +8,14 @@ def contains_transition_metal(smiles):
     transition_metals = ['Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn',
                          'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd',
                          'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg']
+    
     mol = Chem.MolFromSmiles(smiles)
+    
     for atom in mol.GetAtoms():
+        
         if atom.GetSymbol() in transition_metals:
             return True
+        
     return False
 
 # Function to filter the dataframe
