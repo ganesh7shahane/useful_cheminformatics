@@ -20,6 +20,15 @@ def contains_transition_metal(smiles):
 
 # Function to filter the dataframe
 def filter_smiles(dataframe, smiles_column='smiles'):
+    """
+    Perform sanitation and standardization checks on a DataFrame containing SMILES strings.
+
+    Args:
+        df (pandas.DataFrame): A DataFrame with a column named 'smiles'.
+
+    Returns:
+        pandas.DataFrame: A sanitized and standardized DataFrame.
+    """
     
     filtered_df = dataframe.copy()
     
