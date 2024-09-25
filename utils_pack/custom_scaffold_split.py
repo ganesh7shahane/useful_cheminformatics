@@ -4,7 +4,7 @@ from rdkit import Chem
 import splito
 from splito import ScaffoldSplit
 
-def train_test_scaffoldsplit(my_dataframe, features, label, smiles_column='SMILES',test_size=None, random_state=None):
+def train_test_scaffoldsplit(my_dataframe, features, label, smiles_column='SMILES',test_size=None, random_state=None) -> [np.ndarray, np.ndarray, pd.Series, pd.Series]:
     """Generates training and test sets using scaffold split.
 
     Args:

@@ -1,7 +1,7 @@
 import pandas as pd
 from rdkit import Chem
 
-def remove(my_dataframe, smiles_column='smiles'):
+def remove(my_dataframe, smiles_column='smiles') -> pd.DataFrame:
     
     """
     Removes invalid smiles from a given dataframe and returns it.
@@ -40,8 +40,16 @@ def remove(my_dataframe, smiles_column='smiles'):
 
 # Remove rows with smiles containing salts, multiple fragments and transition metals
 
-# Function to check if a SMILES string contains a transition metal
-def contains_transition_metal(smiles):
+def contains_transition_metal(smiles) -> bool:
+    """Function to check if a SMILES string contains a transition metal
+
+
+    Args:
+        smiles (str): input a SMILES string.
+
+    Returns:
+        bool: Returns True if the SMILES string contains a transition metal, False otherwise.
+    """
     transition_metals = ['Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn',
                          'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd',
                          'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg']
@@ -56,7 +64,7 @@ def contains_transition_metal(smiles):
     return False
 
 # Function to filter the dataframe
-def filter_smiles(dataframe, smiles_column='smiles'):
+def filter_smiles(dataframe, smiles_column='smiles') -> pd.DataFrame:
     """
     Perform sanitation and standardization checks on a DataFrame containing SMILES strings.
 
