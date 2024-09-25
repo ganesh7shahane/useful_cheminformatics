@@ -70,7 +70,7 @@ def filter_smiles(dataframe, smiles_column='smiles'):
     df = dataframe.copy()
     
     # Remove invalid SMILES
-    filtered_df = remove(df, smiles_column='smiles')
+    filtered_df = remove(df, smiles_column='SMILES')
     
     for index, row in filtered_df.iterrows():
         smiles = row[smiles_column]
@@ -84,6 +84,8 @@ def filter_smiles(dataframe, smiles_column='smiles'):
         if contains_transition_metal(smiles):
             filtered_df = filtered_df.drop(index)
             continue
+            
+        filtered_df = filtered_df.reset_index(drop=True) # Reset the index after dropping rows
         
     return filtered_df
 
