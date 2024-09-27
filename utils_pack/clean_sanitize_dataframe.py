@@ -93,7 +93,7 @@ def filter_smiles(dataframe, smiles_column='smiles') -> pd.DataFrame:
             filtered_df = filtered_df.drop(index)
             continue
             
-        filtered_df = filtered_df.reset_index(drop=True) # Reset the index after dropping rows
+    filtered_df = filtered_df.reset_index(drop=True) # Reset the index after dropping rows
         
     return filtered_df
 
