@@ -1,9 +1,6 @@
 from rdkit.Chem.MolStandardize import rdMolStandardize
 from rdkit import Chem
 
-# This function takes a dataframe, checks the SMILES and returns them free of charge, mulitple fragments and metal/transition metals
-# This does not remove the rows from the dataframe containing such SMILES
-
 def standardize(smiles):
    
     mol = Chem.MolFromSmiles(smiles)
@@ -28,6 +25,9 @@ def standardize(smiles):
      
     #return taut_uncharged_parent_clean_mol
     return Chem.MolToSmiles(taut_uncharged_parent_clean_mol)
+
+# This function takes a dataframe, checks the SMILES and returns them free of charge, mulitple fragments and metal/transition metals
+# This does not remove the rows from the dataframe containing such SMILES
 
 def df_standardize(my_df, smiles_column='smiles'):
     
