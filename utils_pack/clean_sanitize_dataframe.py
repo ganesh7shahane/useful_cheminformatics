@@ -69,10 +69,10 @@ def filter_smiles(dataframe, smiles_column='smiles') -> pd.DataFrame:
     Perform sanitation and standardization checks on a DataFrame containing SMILES strings.
 
     Args:
-        df (pandas.DataFrame): A DataFrame with a column named 'smiles'.
+        df(pd.DataFrame): A DataFrame with a column named 'smiles'.
 
     Returns:
-        pandas.DataFrame: A sanitized and standardized DataFrame.
+        pd.DataFrame: A sanitized and standardized DataFrame.
     """
     
     df = dataframe.copy()
