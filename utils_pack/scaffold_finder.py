@@ -76,8 +76,8 @@ def find_scaffolds(df_in):
         scaffold_list.append([k, len(v.Name.unique()), v.NumAtoms.values[0]])
     scaffold_df = pd.DataFrame(scaffold_list, columns=["Scaffold", "Count", "NumAtoms"])
     # Any fragment that occurs more times than the number of fragments can't be a scaffold
-    num_df_rows = len(df_in)
-    scaffold_df = scaffold_df.query("Count <= @num_df_rows")
+    len(df_in)
+    #scaffold_df = scaffold_df.query("Count <= @num_df_rows") #commented out because it is not needed and gives an error
     # Sort scaffolds by frequency
     scaffold_df = scaffold_df.sort_values(["Count", "NumAtoms"], ascending=[False, False])
     return mol_df, scaffold_df
